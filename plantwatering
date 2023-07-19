@@ -67,11 +67,6 @@ async def main():
             print('relay running')
         else:
             print('relay not running')
-            # max non-watering up to 5 minutes
-            # summation 1  2 3 4 .... 60
-            #watering_sleep = watering_sleep + 1
-            #if watering_sleep >= 60:
-            #    watering_sleep = 1
         await asyncio.sleep(watering_sleep)
     
     # Don't forget to close the robot when you're done!
