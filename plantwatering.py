@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from viam.robot.client import RobotClient
 from viam.rpc.dial import Credentials, DialOptions
