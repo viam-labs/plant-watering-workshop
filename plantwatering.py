@@ -6,10 +6,8 @@ from viam.rpc.dial import Credentials, DialOptions
 from viam.components.board import Board
 
 # Set GPIO pin numbers
-#moisture_pin = 40  # Change this to the actual GPIO pin number connected to the moisture sensor
-#relay_pin = 8  # Change this to the actual GPIO pin number connected to the relay
-MOISTURE_PIN = '40'
-RELAY_PIN = '8'
+MOISTURE_PIN = '40' # Change this to the actual GPIO pin number connected to the moisture sensor
+RELAY_PIN = '8' # Change this to the actual GPIO pin number connected to the relay
 
 robot_secret = os.getenv('ROBOT_SECRET') or ''
 robot_address = os.getenv('ROBOT_ADDRESS') or ''
