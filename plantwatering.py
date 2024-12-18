@@ -10,6 +10,7 @@ MOISTURE_PIN = (
 )
 RELAY_PIN = "8"  # Change this to the actual GPIO pin number connected to the relay
 
+BOARD_NAME = os.getenv("BOARD_NAME") or "board-1"
 ROBOT_API_KEY = os.getenv("ROBOT_API_KEY") or "PUT ROBOT API KEY HERE"
 ROBOT_API_KEY_ID = os.getenv("ROBOT_API_KEY_ID") or "PUT ROBOT API KEY ID HERE"
 ROBOT_ADDRESS = os.getenv("ROBOT_ADDRESS") or "PUT ROBOT ADDRESS HERE"
@@ -53,10 +54,7 @@ async def main():
     print(robot.resource_names)
 
     # pi/board
-    pi = Board.from_robot(robot, "pi")
-    # replace placeholder pin with valid
-    pi_return_value = await pi.gpio_pin_by_name("8")
-    print(f"pi gpio_pin_by_name return value: {await pi_return_value.get()}")
+    pi = Board.from_robot(robot, BOARD_NAME)
 
     # change the sync based on longer times
     watering_sleep = 1
